@@ -6,13 +6,13 @@ export interface IAdmin {
 	name: string
 }
 
-interface IState {
+export interface IAdminState {
 	admin: IAdmin
 }
 
 
 //🛢定义初始数据，相当于初始化了一个 state
-const initAdminState : IState = {
+const initAdminState : IAdminState = {
 	admin: {
 		id: 0,
 		name: 'Kim'
@@ -27,8 +27,8 @@ export enum IAdminActionType {
 }
 
 
-//👇对于 reducer 来说，默认有 state 参数，用 IState 来定义它的类型并赋予默认值, action 用来接收 action 类型, 用一个 type 对象来定义！
-const admin = (state: IState = initAdminState, action: {type: IAdminActionType, payload:any} ) => {//payload 为传递的参数，不可预测要改什么类型，所以为 any
+//👇对于 reducer 来说，默认有 state 参数，用 IAdminState 来定义它的类型并赋予默认值, action 用来接收 action 类型, 用一个 type 对象来定义！
+const admin = (state: IAdminState = initAdminState, action: {type: IAdminActionType, payload:any} ) => {//payload 为传递的参数，不可预测要改什么类型，所以为 any
 	switch(action.type) {
 		case( IAdminActionType.INIT):
 			return state ///初始值不变，所以直接 return

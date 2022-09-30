@@ -21,14 +21,16 @@ export enum ICountActionType {
 
 
 //👇定义每种操作对应的反应
-const count = (state: ICount, action:{type:ICountActionType, payload:any}) => {
+const count = (state: ICount = initCount, action:{type:ICountActionType, payload:any}) => {
 	switch(action.type) {
 		case( ICountActionType.INIT ):
 			return state
 		case( ICountActionType.ADD ):
-			return {...state, count: state.count + 1 }
+			return { count: state.count + 1 } //🔥🔥也可以在 return 中进行数据的计算
 		case( ICountActionType.REDUCE ):
-			return {...state, count: state.count -1 }
+			return { count: state.count - 1 } //🔥🔥也可以在 return 中进行数据的计算
+		default:
+			return state
 	}
 }
 

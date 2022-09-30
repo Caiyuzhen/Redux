@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-	//🔥🔥引入 store 数据
+	//🔥🔥引入 store 数据，包裹根组件
 	<Provider store={ store }>
   		{/* <React.StrictMode> */}
 	    	<App />

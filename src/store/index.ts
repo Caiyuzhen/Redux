@@ -1,4 +1,4 @@
-//⚡️基础的配置以及基础的 store 数据的合并导出
+//⚡️⚡️添加中间件、调试工具、以及进行基础的配置以及基础的 store 数据的合并导出
 import { applyMiddleware, createStore } from "redux"
 import { composeWithDevTools } from "redux-devtools-extension" //引入 chrome 调试工具
 import reducers from "./reducers" //从 reducers 文件导入，默认导入的是 index 文件
