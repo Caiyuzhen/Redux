@@ -6,18 +6,15 @@ export interface IUser {
 	name: string
 }
 
-
 interface IState {
-	user: IUser
+	user: IUser//继承接口,并且再扩展出更多信息
 }
 
-
-
-// 🛢定义初始数据，相当于初始化了一个 state
+// 🛢实例化一个 User 的初始数据，相当于初始化了一个 state
 const initUserState : IState = {
 	user: {
-		id: 0,
-		name: 'Zen',
+		id: 0,//默认值
+		name: 'Zen',//默认值
 	}
 }
 
